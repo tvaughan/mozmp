@@ -15,28 +15,16 @@ dnl You should have received a copy of the GNU General Public License
 dnl along with this program; if not, write to the Free Software
 dnl Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-dnl Process this file with autoconf to produce a configure script.
-AC_INIT(src/Stat.cpp)
-AM_INIT_AUTOMAKE(camille, 0.0.1)
-AM_CONFIG_HEADER(include/configStat.h)
-AM_PROG_LIBTOOL
+AC_DEFUN(AC_PROG_XPIDL,[
+AC_PATH_PROG(XPIDL, xpidl)
+test -z "${XPIDL}" && AC_MSG_ERROR(xpidl was not found on this system)
+xpidlbinpath="`dirname ${XPIDL}`"
+xpidlhome="`(cd ${xpidlbinpath}/..; pwd)`"
+xpidlidlpath="${xpidlhome}/idl"
+XPIDLFLAGS="-I${xpidlidlpath}"
+AC_SUBST(XPIDLFLAGS)
+])
 
-dnl Checks for programs.
-AC_PROG_CXX
-
-dnl Checks for libraries.
-
-dnl Checks for header files.
-AC_HEADER_STDC
-AC_HEADER_TIME
-AC_CHECK_HEADERS(sys/stat.h sys/time.h unistd.h)
-
-dnl Checks for typedefs, structures, and compiler characteristics.
-AC_STRUCT_TM
-AC_TYPE_SIZE_T
-
-dnl Checks for library functions.
-AC_CHECK_FUNCS(snprintf)
-
-AC_XPCOM
-AC_OUTPUT(Makefile include/Makefile src/Makefile test/Makefile xpcom/Makefile)
+AC_DEFUN(AC_XPCOM,[
+AC_PROG_XPIDL
+])

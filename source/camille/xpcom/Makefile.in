@@ -87,12 +87,16 @@ OBJDUMP = @OBJDUMP@
 PACKAGE = @PACKAGE@
 RANLIB = @RANLIB@
 VERSION = @VERSION@
+XPIDL = @XPIDL@
+XPIDLFLAGS = @XPIDLFLAGS@
 
 DISTCLEANFILES = *~
 
 lib_LTLIBRARIES = libnsStat.la
 libnsStat_la_SOURCES = nsStat.cpp nsStat.h nsIStat.h
 EXTRA_DIST = nsIStat.idl nsIStat.xpt
+
+BUILT_SOURCES = nsIStat.h
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = ../include/configStat.h
 CONFIG_CLEAN_FILES = 
@@ -339,6 +343,7 @@ distclean-generic:
 	-test -z "$(DISTCLEANFILES)" || rm -f $(DISTCLEANFILES)
 
 maintainer-clean-generic:
+	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
 mostlyclean-am:  mostlyclean-libLTLIBRARIES mostlyclean-compile \
 		mostlyclean-libtool mostlyclean-tags mostlyclean-depend \
 		mostlyclean-generic
@@ -381,12 +386,12 @@ mostlyclean-generic distclean-generic clean-generic \
 maintainer-clean-generic clean mostlyclean distclean maintainer-clean
 
 
-# nsIStat.h: nsIStat.idl
-# 	xpidl -m header nsIStat.idl
-# 
-# nsIStat.xpt: nsIStat.idl
-# 	xpidl -m typelib nsIStat.idl
-# 
+%.h: %.idl
+	@$(XPIDL) $(XPIDLFLAGS) -m header $?
+
+%.xpt: %.idl
+	@$(XPIDL) $(XPIDLFLAGS) -m typelib $?
+
 # Use template in nsIStat.h to create nsStat.h and nsStat.cpp.
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

@@ -21,10 +21,12 @@ lib_LTLIBRARIES = libnsStat.la
 libnsStat_la_SOURCES = nsStat.cpp nsStat.h nsIStat.h
 EXTRA_DIST = nsIStat.idl nsIStat.xpt
 
-# nsIStat.h: nsIStat.idl
-# 	xpidl -m header nsIStat.idl
-# 
-# nsIStat.xpt: nsIStat.idl
-# 	xpidl -m typelib nsIStat.idl
-# 
+BUILT_SOURCES = nsIStat.h
+
+%.h: %.idl
+	@$(XPIDL) $(XPIDLFLAGS) -m header $?
+
+%.xpt: %.idl
+	@$(XPIDL) $(XPIDLFLAGS) -m typelib $?
+
 # Use template in nsIStat.h to create nsStat.h and nsStat.cpp.

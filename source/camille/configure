@@ -1992,6 +1992,51 @@ fi
 done
 
 
+
+
+# Extract the first word of "xpidl", so it can be a program name with args.
+set dummy xpidl; ac_word=$2
+echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+echo "configure:2001: checking for $ac_word" >&5
+if eval "test \"`echo '$''{'ac_cv_path_XPIDL'+set}'`\" = set"; then
+  echo $ac_n "(cached) $ac_c" 1>&6
+else
+  case "$XPIDL" in
+  /*)
+  ac_cv_path_XPIDL="$XPIDL" # Let the user override the test with a path.
+  ;;
+  ?:/*)			 
+  ac_cv_path_XPIDL="$XPIDL" # Let the user override the test with a dos path.
+  ;;
+  *)
+  IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS=":"
+  ac_dummy="$PATH"
+  for ac_dir in $ac_dummy; do 
+    test -z "$ac_dir" && ac_dir=.
+    if test -f $ac_dir/$ac_word; then
+      ac_cv_path_XPIDL="$ac_dir/$ac_word"
+      break
+    fi
+  done
+  IFS="$ac_save_ifs"
+  ;;
+esac
+fi
+XPIDL="$ac_cv_path_XPIDL"
+if test -n "$XPIDL"; then
+  echo "$ac_t""$XPIDL" 1>&6
+else
+  echo "$ac_t""no" 1>&6
+fi
+
+test -z "${XPIDL}" && { echo "configure: error: xpidl was not found on this system" 1>&2; exit 1; }
+xpidlbinpath="`dirname ${XPIDL}`"
+xpidlhome="`(cd ${xpidlbinpath}/..; pwd)`"
+xpidlidlpath="${xpidlhome}/idl"
+XPIDLFLAGS="-I${xpidlidlpath}"
+
+
+
 trap '' 1 2 15
 cat > confcache <<\EOF
 # This file is a shell script that caches the results of configure
@@ -2152,6 +2197,8 @@ s%@LN_S@%$LN_S%g
 s%@LIBTOOL@%$LIBTOOL%g
 s%@CXX@%$CXX%g
 s%@CPP@%$CPP%g
+s%@XPIDL@%$XPIDL%g
+s%@XPIDLFLAGS@%$XPIDLFLAGS%g
 
 CEOF
 EOF
