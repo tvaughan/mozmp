@@ -1,3 +1,4 @@
+/* -*- Mode: Java -*- */
 /*
  * The Mozilla Media Player is an audio and video player.
  * Copyright (C) 2000  Tom Vaughan
@@ -19,10 +20,10 @@
 
 function mozmpExit()
 {
-	close();
+    close();
 }
 
 function mozmpAbout()
 {
-	alert('Hello World!');
+    alert('Hello World!');
 }
