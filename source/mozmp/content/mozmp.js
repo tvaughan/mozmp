@@ -21,6 +21,7 @@
 function mozmpOpen()
 {
     const nsIFilePicker = Components.interfaces.nsIFilePicker;
+    f = "(null)";
 
     try {
 	fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
@@ -28,8 +29,11 @@ function mozmpOpen()
 	fp.appendFilters(nsIFilePicker.filterAll);
 
 	if (fp.show() == nsIFilePicker.returnOK) {
-	    alert("File: " + fp.file.path);
+	    f = fp.file.path;
 	}
+
+	d = document.getElementById('mozmp-display');
+	d.setAttribute("value", f);
     }
     catch(e) {
     }
