@@ -23,7 +23,7 @@ SUFFIXES = .html .idl .xpt
 lib_LTLIBRARIES = libnsStat.la
 libnsStat_la_SOURCES = nsStat.cpp nsStat.h nsIStat.h
 libnsStat_la_LIBADD = ../src/Stat.lo
-EXTRA_DIST = nsIStat.idl nsStat.js
+EXTRA_DIST = nsIStat.idl
 
 BUILT_SOURCES = nsIStat.h
 
