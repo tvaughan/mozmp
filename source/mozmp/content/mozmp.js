@@ -20,8 +20,6 @@
 
 function mozmpOpen()
 {
-    s = "(null)";
-
     try {
 	const FILEPICKER_CONTRACTID = '@mozilla.org/filepicker;1';
 	const FILEPICKER_IID = Components.interfaces.nsIFilePicker;
@@ -38,21 +36,21 @@ function mozmpOpen()
 	    s = stat.mTime();
 	    */
 
+	    s = fp.file.path;
+
+	    d = document.getElementById('mozmp-display');
+	    d.setAttribute("value", s);
+
 	    const URL_CONTRACTID = "@mozilla.org/network/standard-url;1";
 	    const URL_IID = Components.interfaces.nsIURL;
 	    url = Components.classes[URL_CONTRACTID].createInstance(URL_IID);
-	    url.path = fp.file.path;
+	    url.path = s;
 
 	    const SOUND_CONTRACTID = "@mozilla.org/sound;1";
 	    const SOUND_IID = Components.interfaces.nsISound;
 	    sound = Components.classes[SOUND_CONTRACTID].createInstance(SOUND_IID);
 	    sound.play(url);
-
-	    s = url.path;
 	}
-
-	d = document.getElementById('mozmp-display');
-	d.setAttribute("value", s);
     }
     catch(e) {
 	dump(e);
