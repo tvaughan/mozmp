@@ -20,8 +20,6 @@
 #ifndef __STAT_H__
 #define __STAT_H__
 
-#define CA_MAXBUFFERSIZE 256
-
 class Stat
 {
  private:
@@ -29,7 +27,7 @@ class Stat
   bool mStatCalled;
   void callStat(void);
   char *mFile;
-  char mTimeStr[CA_MAXBUFFERSIZE];
+  char *mTimeStr;
 
  public:
   Stat(void);

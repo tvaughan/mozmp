@@ -58,6 +58,8 @@
 #define DEBUG(x)
 #endif /* 0 */
 
+#define MAXBUFFERSIZE	256
+
 Stat::Stat(void)
 {
   mStat = (struct stat *) malloc(sizeof(struct stat));
@@ -65,6 +67,7 @@ Stat::Stat(void)
   mStatCalled = 0;
 
   mFile = NULL;
+  mTimeStr = (char *) malloc(MAXBUFFERSIZE);
 }
 
 Stat::~Stat(void)
@@ -73,6 +76,9 @@ Stat::~Stat(void)
 
   if (mFile)
     free(mFile);
+
+  if (mTimeStr)
+    free(mTimeStr);
 }
 
 void
@@ -123,7 +129,7 @@ Stat::mTime(void)
    * TODO: localtime_r should be used.
    */
   tm = localtime(&((struct stat *) mStat)->st_mtime);
-  strftime(mTimeStr, sizeof(mTimeStr), "%a %b %d %T %Y", tm);
+  strftime(mTimeStr, MAXBUFFERSIZE, "%a %b %d %T %Y", tm);
 
   DEBUG((stderr, "mTime \"%s\"\n", mTimeStr));
 
