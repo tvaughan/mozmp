@@ -1,3 +1,4 @@
+/* -*- Mode: Java -*- */
 /*
  * The Mozilla Media Player is an audio and video player.
  * Copyright (C) 2000  Tom Vaughan
@@ -19,16 +20,18 @@
 
 function mozmpInstallCallback(name, result)
 {
-	// For error codes, please see:
-	// http://lxr.mozilla.org/seamonkey/source/xpinstall/src/nsInstall.h
-	if (result)
-		alert("An error occured: " + result);
+    /*
+     * For error codes, please see:
+     * http://lxr.mozilla.org/seamonkey/source/xpinstall/src/nsInstall.h
+     */
+    if (result)
+	alert("An error occured: " + result);
 }
 
 function mozmpInstall()
 {
-	var xpi = new Object();
+    var xpi = new Object();
 
-	xpi["Mozilla Media Player"] = "ftp://ftp.mozdev.org/pub/mozmp/mozmp-0.0.3.xpi";
-	InstallTrigger.install(xpi, mozmpInstallCallback);
+    xpi["Mozilla Media Player"] = "ftp://ftp.mozdev.org/pub/mozmp/mozmp-0.0.3.xpi";
+    InstallTrigger.install(xpi, mozmpInstallCallback);
 }
