@@ -88,9 +88,9 @@ Stat::setFile(const char *file)
   sprintf(mFile, file);
 #endif /* HAVE_SNPRINTF */
 
-  DEBUG((stderr, "setFile \"%s\"\n", mFile));
-
   mStatCalled = 0;
+
+  DEBUG((stderr, "setFile \"%s\"\n", mFile));
 }
 
 char *
@@ -104,10 +104,11 @@ Stat::getFile(void)
 void
 Stat::callStat(void)
 {
-  if (!mStatCalled) {
-    stat(mFile, (struct stat *) mStat);
-    mStatCalled = 1;
-  }
+  if (mStatCalled)
+    return;
+
+  stat(mFile, (struct stat *) mStat);
+  mStatCalled = 1;
 }
 
 char *
