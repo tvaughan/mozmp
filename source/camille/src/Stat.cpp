@@ -52,8 +52,6 @@
 
 #include "Stat.h"
 
-#define BUFFERSIZE 256
-
 #if 0
 #define DEBUG(x)	fprintf x
 #else
