@@ -40,15 +40,15 @@ function nsStat() {
  */
 nsStat.prototype = {
     set file(f) {
-	this.file = f;
+	this.aFile = f;
     },
 
     get file() {
-	return this.file;
+	return this.aFile;
     },
 
     mTime: function() {
-	return this.MTime();
+	return this.mTime();
     },
 
     QueryInterface: function(iid) {
