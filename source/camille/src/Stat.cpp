@@ -66,7 +66,7 @@ Stat::Stat(void)
 
   mStatCalled = 0;
 
-  mFile = NULL;
+  mFileStr = NULL;
   mTimeStr = (char *) malloc(MAXBUFFERSIZE);
 }
 
@@ -74,8 +74,8 @@ Stat::~Stat(void)
 {
   free(mStat);
 
-  if (mFile)
-    free(mFile);
+  if (mFileStr)
+    free(mFileStr);
 
   if (mTimeStr)
     free(mTimeStr);
@@ -89,19 +89,19 @@ Stat::setFile(const char *aFile)
 
   mStatCalled = 0;
 
-  if (mFile)
-    free(mFile);
-  mFile = strdup(aFile);
+  if (mFileStr)
+    free(mFileStr);
+  mFileStr = strdup(aFile);
 
-  DEBUG((stderr, "setFile \"%s\"\n", mFile));
+  DEBUG((stderr, "setFile \"%s\"\n", mFileStr));
 }
 
 char *
 Stat::getFile(void)
 {
-  DEBUG((stderr, "getFile \"%s\"\n", mFile));
+  DEBUG((stderr, "getFile \"%s\"\n", mFileStr));
 
-  return mFile;
+  return mFileStr;
 }
 
 void
@@ -112,7 +112,7 @@ Stat::callStat(void)
 
   mStatCalled = 1;
 
-  stat(mFile, (struct stat *) mStat);
+  stat(mFileStr, (struct stat *) mStat);
 }
 
 char *
@@ -120,7 +120,7 @@ Stat::mTime(void)
 {
   struct tm *tm;
 
-  if (!mFile)
+  if (!mFileStr)
     return NULL;
 
   callStat();

@@ -26,7 +26,7 @@ class Stat
   void *mStat;
   bool mStatCalled;
   void callStat(void);
-  char *mFile;
+  char *mFileStr;
   char *mTimeStr;
 
  public:
