@@ -54,4 +54,14 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 		</menu>
 	</menubar>
 
+	<box orient="vertical">
+
+		<iframe id="mozmp-content" src="about:blank" />
+
+		<spring flex="1" />
+
+		<text value="Time Remaining: " />
+
+	</box>
+
 </window>
