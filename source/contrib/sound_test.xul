@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE  window>
+
+<window id="lizzard"
+
+xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="lizzard"
+        orient="vertical">
+
+<box flex="1" class="foo" />
+
+
+<script>
+function test(){
+
+const wav                     = '/home/petejc/WAV/106miles.wav';
+const I_SOUND                 = "nsISound";
+const SND_CID                 = "@mozilla.org/sound;1";
+const NETWORK_STD_CID         = "@mozilla.org/network/standard-url;1";
+const I_URL                   = "nsIURL";
+const FileURL                 = new  Components.Constructor(NETWORK_STD_CID, I_URL);
+
+var fileURL                   = new FileURL();
+
+fileURL.spec='file://'+wav;
+
+var Sound                     = new Components.Constructor(SND_CID, I_SOUND);
+var s                         = new Sound();
+
+dump("PLAYING . . . \n");
+s.play(fileURL);
+
+}
+
+</script>
+
+
+<button label="test sound" oncommand="test();" />
+
+</window>
+
