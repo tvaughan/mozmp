@@ -23,13 +23,11 @@
 
 NS_IMPL_ISUPPORTS1(nsStat, nsIStat)
 
-#define NS_STAT_CONTRACTID "@mozilla.org/camille;1"
-
 NS_GENERIC_FACTORY_CONSTRUCTOR(nsStat)
 
 static nsModuleComponentInfo
 components[] = {
-  { "Camille Component", NS_ISTAT_IID, NS_STAT_CONTRACTID,
+  { "Camille Component", NS_ISTAT_IID, NS_ISTAT_CONTRACTID,
     nsStatConstructor, NULL, NULL }
 };
 
