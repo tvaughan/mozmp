@@ -15,21 +15,12 @@ dnl You should have received a copy of the GNU General Public License
 dnl along with this program; if not, write to the Free Software
 dnl Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-dnl Process this file with autoconf to produce a configure script.
-AC_INIT(create-xpi.sh.in)
-AM_INIT_AUTOMAKE(mozmp, 0.0.4)
+AC_DEFUN(AC_PROG_JAR,[
+AC_CHECK_PROG(JAR, jar, jar)
+test -z "${JAR}" && AC_MSG_ERROR(jar was not found on this system)
+])
 
-dnl Checks for programs.
-AC_PROG_JAR
-AC_PROG_ZIP
-
-dnl Checks for libraries.
-
-dnl Checks for header files.
-
-dnl Checks for typedefs, structures, and compiler characteristics.
-
-dnl Checks for library functions.
-
-AC_CONFIG_SUBDIRS(camille)
-AC_OUTPUT([create-xpi.sh Makefile], [chmod a+x create-xpi.sh])
+AC_DEFUN(AC_PROG_ZIP,[
+AC_CHECK_PROG(ZIP, zip, zip)
+test -z "${ZIP}" && AC_MSG_ERROR(zip was not found on this system)
+])

@@ -1,4 +1,5 @@
 #! /bin/sh
+# -*- Mode: Sh -*-
 
 # The Mozilla Media Player is an audio and video player.
 # Copyright (C) 2000  Tom Vaughan
@@ -20,5 +21,8 @@
 PACKAGE=@PACKAGE@
 VERSION=@VERSION@
 
-jar cf ${PACKAGE}.jar `find ${PACKAGE} -type f | grep -v CVS`
-zip -r ${PACKAGE}-${VERSION}.xpi -i@MANIFEST .
+JAR=@JAR@
+ZIP=@ZIP@
+
+find ${PACKAGE} -type f | grep -v CVS | xargs ${JAR} cf ${PACKAGE}.jar
+${ZIP} -r ${PACKAGE}-${VERSION}.xpi -i@MANIFEST .

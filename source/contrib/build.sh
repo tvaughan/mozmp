@@ -1,4 +1,5 @@
 #! /bin/sh
+# -*- Mode: Sh -*-
 
 # The Mozilla Media Player is an audio and video player.
 # Copyright (C) 2000  Tom Vaughan
@@ -17,9 +18,22 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-./configure --disable-static --prefix=/tmp/mozmp && make -k install
-make -C camille/xpcom nsIStat.xpt
-cp -f camille/xpcom/*.xpt /tmp/mozmp/lib
+PACKAGE=mozmp
+PREFIX=/tmp/${PACKAGE}
+
+# Let BSD users set "MAKE=gmake".
+MAKE=${MAKE:=make}
+if [ -z "`which ${MAKE}`" ]; then
+    echo "${MAKE} not found on this system"
+    exit 0
+fi
+
+MAKE=${MAKE} ./configure --disable-static --prefix=${PREFIX} || exit 0
+${MAKE} -k install || exit 0
+
+# TODO: Do this in camille/xpcom/Makefile.am.
+${MAKE} -C camille/xpcom nsIStat.xpt || exit 0
+cp -f camille/xpcom/*.xpt ${PREFIX}/lib
 
 ./create-xpi.sh
-mv -f *.jar *.xpi /tmp
+mv -f *.jar *.xpi ${PREFIX}
