@@ -34,6 +34,11 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 		   chrome:displayName="English(US)"
 		   chrome:author="mozmp.mozdev.org"
 		   chrome:previewURL="http://www.mozilla.org/locales/en-US.gif">
+    <chrome:packages>
+      <RDF:Seq about="urn:mozilla:locale:en-US:packages">
+	<RDF:li resource="urn:mozilla:locale:en-US:mozmp"/>
+      </RDF:Seq>
+    </chrome:packages>
   </RDF:Description>
 
 </RDF:RDF>
