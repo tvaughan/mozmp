@@ -25,7 +25,7 @@ function mozmpOpen()
     try {
 	const FILEPICKER_CONTRACTID = '@mozilla.org/filepicker;1';
 	const FILEPICKER_IID = Components.interfaces.nsIFilePicker;
-	fp = Components.classes[FP].createInstance(FILEPICKER_IID);
+	fp = Components.classes[FILEPICKER_CONTRACTID].createInstance(FILEPICKER_IID);
 	fp.init(window, "Open File...", FILEPICKER_IID.modeOpen);
 	fp.appendFilters(FILEPICKER_IID.filterAll);
 
