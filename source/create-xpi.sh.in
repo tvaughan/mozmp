@@ -21,8 +21,7 @@
 PACKAGE=@PACKAGE@
 VERSION=@VERSION@
 
-JAR=@JAR@
 ZIP=@ZIP@
 
-find ${PACKAGE} -type f | grep -v CVS | xargs ${JAR} cf ${PACKAGE}.jar
-${ZIP} -r ${PACKAGE}-${VERSION}.xpi -i@MANIFEST .
+${ZIP} -r ${PACKAGE}.jar -i@MANIFEST-JAR .
+${ZIP} -r ${PACKAGE}-${VERSION}.xpi -i@MANIFEST-XPI .

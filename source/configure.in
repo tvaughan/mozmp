@@ -20,7 +20,6 @@ AC_INIT(create-xpi.sh.in)
 AM_INIT_AUTOMAKE(mozmp, 0.0.4)
 
 dnl Checks for programs.
-AC_PROG_JAR
 AC_PROG_ZIP
 
 dnl Checks for libraries.

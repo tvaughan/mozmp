@@ -775,42 +775,10 @@ fi
 
 
 
-# Extract the first word of "jar", so it can be a program name with args.
-set dummy jar; ac_word=$2
-echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
-echo "configure:782: checking for $ac_word" >&5
-if eval "test \"`echo '$''{'ac_cv_prog_JAR'+set}'`\" = set"; then
-  echo $ac_n "(cached) $ac_c" 1>&6
-else
-  if test -n "$JAR"; then
-  ac_cv_prog_JAR="$JAR" # Let the user override the test.
-else
-  IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS=":"
-  ac_dummy="$PATH"
-  for ac_dir in $ac_dummy; do
-    test -z "$ac_dir" && ac_dir=.
-    if test -f $ac_dir/$ac_word; then
-      ac_cv_prog_JAR="jar"
-      break
-    fi
-  done
-  IFS="$ac_save_ifs"
-fi
-fi
-JAR="$ac_cv_prog_JAR"
-if test -n "$JAR"; then
-  echo "$ac_t""$JAR" 1>&6
-else
-  echo "$ac_t""no" 1>&6
-fi
-
-test -z "${JAR}" && { echo "configure: error: jar was not found on this system" 1>&2; exit 1; }
-
-
 # Extract the first word of "zip", so it can be a program name with args.
 set dummy zip; ac_word=$2
 echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
-echo "configure:814: checking for $ac_word" >&5
+echo "configure:782: checking for $ac_word" >&5
 if eval "test \"`echo '$''{'ac_cv_prog_ZIP'+set}'`\" = set"; then
   echo $ac_n "(cached) $ac_c" 1>&6
 else
@@ -1001,7 +969,6 @@ s%@AUTOMAKE@%$AUTOMAKE%g
 s%@AUTOHEADER@%$AUTOHEADER%g
 s%@MAKEINFO@%$MAKEINFO%g
 s%@SET_MAKE@%$SET_MAKE%g
-s%@JAR@%$JAR%g
 s%@ZIP@%$ZIP%g
 s%@subdirs@%$subdirs%g
 
