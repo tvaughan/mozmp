@@ -98,6 +98,7 @@ SUFFIXES = .idl .xpt
 
 lib_LTLIBRARIES = libnsStat.la
 libnsStat_la_SOURCES = nsStat.cpp nsStat.h nsIStat.h
+libnsStat_la_LIBADD = ../src/Stat.lo
 EXTRA_DIST = nsIStat.idl nsStat.js
 
 BUILT_SOURCES = nsIStat.h
@@ -115,7 +116,7 @@ CPPFLAGS = @CPPFLAGS@
 LDFLAGS = @LDFLAGS@
 LIBS = @LIBS@
 libnsStat_la_LDFLAGS = 
-libnsStat_la_LIBADD = 
+libnsStat_la_DEPENDENCIES =  ../src/Stat.lo
 libnsStat_la_OBJECTS =  nsStat.lo
 CXXFLAGS = @CXXFLAGS@
 CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
