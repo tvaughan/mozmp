@@ -32,7 +32,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 		   about="urn:mozilla:package:mozmp"
 		   chrome:name="mozmp"
 		   chrome:displayName="Mozilla Media Player"
-		   chrome:author="Tom Vaughan">
+		   chrome:author="mozmp.mozdev.org">
   </RDF:Description>
 
 </RDF:RDF>

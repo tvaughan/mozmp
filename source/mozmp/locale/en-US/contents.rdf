@@ -32,7 +32,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 		   about="urn:mozilla:locale:en-US"
 		   chrome:name="en-US"
 		   chrome:displayName="English(US)"
-		   chrome:author="Tom Vaughan"
+		   chrome:author="mozmp.mozdev.org"
 		   chrome:previewURL="http://www.mozilla.org/locales/en-US.gif">
   </RDF:Description>
 

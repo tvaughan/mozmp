@@ -19,7 +19,7 @@
 
 mozmpName		= "mozmp";
 mozmpDisplayName	= "Mozilla Media Player";
-mozmpAuthor		= "Tom Vaughan";
+mozmpAuthor		= "mozmp.mozdev.org";
 mozmpVersion		= "0.0.2";
 mozmpRegistryKey	= mozmpAuthor + "/" + mozmpDisplayName;
 
