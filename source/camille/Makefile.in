@@ -93,7 +93,7 @@ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = ./include/configStat.h
 CONFIG_CLEAN_FILES = 
-DIST_COMMON =  AUTHORS COPYING INSTALL Makefile.am Makefile.in \
+DIST_COMMON =  AUTHORS COPYING INSTALL Makefile.am Makefile.in THANKS \
 aclocal.m4 config.guess config.sub configure configure.in install-sh \
 ltconfig ltmain.sh missing mkinstalldirs
 
