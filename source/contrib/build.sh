@@ -19,7 +19,7 @@
 
 ./configure --disable-static --prefix=/tmp/mozmp && make -k install
 make -C camille/xpcom nsIStat.xpt
-cp -f camille/xpcom/*.xpt /tmp/mozmp/lib
+cp -f /camille/xpcom/*.xpt camille/xpcom/*.js tmp/mozmp/lib
 
 ./create-xpi.sh
 mv -f *.jar *.xpi /tmp

@@ -21,7 +21,6 @@
 
 [scriptable, uuid(6df20f63-68a0-4c51-a847-a3ba00b6e6b6)]
 interface nsIStat : nsISupports {
-  void setFile(in string file);
-  void getFile(out string file);
-  void mTime(inout string b, in unsigned long bsize);
+  attribute string file;
+  string mTime();
 };

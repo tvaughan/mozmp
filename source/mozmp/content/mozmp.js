@@ -30,7 +30,12 @@ function mozmpOpen()
 	fp.appendFilters(nsIFilePicker.filterAll);
 
 	if (fp.show() == nsIFilePicker.returnOK) {
-	    s = fp.file.path;
+	    const STAT_CONTRACTID = '@mozilla.org/camille;1';
+	    const STAT_IID = Components.interfaces.nsIStat;
+	    stat = Components.classes[STAT_CONTRACTID].createInstance();
+	    stat = stat.QueryInterface(STAT_IID);
+	    stat.setFile(fp.file.path);
+	    s = stat.mTime();
 	}
 
 	d = document.getElementById('mozmp-display');

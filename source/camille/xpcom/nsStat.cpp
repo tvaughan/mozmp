@@ -17,6 +17,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include "nsIStat.h"
 #include "nsStat.h"
 
 NS_IMPL_ISUPPORTS1(nsStat, nsIStat)
@@ -33,20 +34,21 @@ nsStat::~nsStat()
   delete s;
 }
 
-/* void setFile (in string file); */
-NS_IMETHODIMP nsStat::SetFile(const char *file)
+/* attribute string file; */
+NS_IMETHODIMP nsStat::GetFile(char * *aFile)
 {
-  s->setFile(file);
+  *aFile = s->getFile();
+  return NS_OK;
+}
+NS_IMETHODIMP nsStat::SetFile(const char * aFile)
+{
+  s->setFile(aFile);
+  return NS_OK;
 }
 
-/* void getFile (out string file); */
-NS_IMETHODIMP nsStat::GetFile(char **file)
+/* string mTime (); */
+NS_IMETHODIMP nsStat::MTime(char **_retval)
 {
-  *file = s->getFile();
-}
-
-/* void mTime (inout string b, in unsigned long bsize); */
-NS_IMETHODIMP nsStat::MTime(char **b, PRUint32 bsize)
-{
-  *b = s->mTime(*b, bsize);
+  *_retval = s->mTime();
+  return NS_OK;
 }

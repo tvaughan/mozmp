@@ -27,7 +27,6 @@ int
 main(int argc, char **argv)
 {
   Stat *s;
-  char *b;
 
   if (argc != 2) {
     fprintf(stderr, "Usage: testStat [filename]\n");
@@ -37,14 +36,10 @@ main(int argc, char **argv)
   s = new Stat();
   s->setFile((const char *) argv[1]);
 
-  b = new char[BUFFERSIZE + 1];
-
   fprintf(stdout, "         File: %s\n", s->getFile());
-  fprintf(stdout, "Last Modified: %s\n", s->mTime(b, BUFFERSIZE));
+  fprintf(stdout, "Last Modified: %s\n", s->mTime());
 
   delete s;
-
-  delete b;
 
   exit(0);
 }

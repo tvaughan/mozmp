@@ -27,28 +27,26 @@ class NS_NO_VTABLE nsIStat : public nsISupports {
 
   NS_DEFINE_STATIC_IID_ACCESSOR(NS_ISTAT_IID)
 
-  /* void setFile (in string file); */
-  NS_IMETHOD SetFile(const char *file) = 0;
+  /* attribute string file; */
+  NS_IMETHOD GetFile(char * *aFile) = 0;
+  NS_IMETHOD SetFile(const char * aFile) = 0;
 
-  /* void getFile (out string file); */
-  NS_IMETHOD GetFile(char **file) = 0;
-
-  /* void mTime (inout string b, in unsigned long bsize); */
-  NS_IMETHOD MTime(char **b, PRUint32 bsize) = 0;
+  /* string mTime (); */
+  NS_IMETHOD MTime(char **_retval) = 0;
 
 };
 
 /* Use this macro when declaring classes that implement this interface. */
 #define NS_DECL_NSISTAT \
-  NS_IMETHOD SetFile(const char *file); \
-  NS_IMETHOD GetFile(char **file); \
-  NS_IMETHOD MTime(char **b, PRUint32 bsize); 
+  NS_IMETHOD GetFile(char * *aFile); \
+  NS_IMETHOD SetFile(const char * aFile); \
+  NS_IMETHOD MTime(char **_retval); 
 
 /* Use this macro to declare functions that forward the behavior of this interface to another object. */
 #define NS_FORWARD_NSISTAT(_to) \
-  NS_IMETHOD SetFile(const char *file) { return _to ## SetFile(file); } \
-  NS_IMETHOD GetFile(char **file) { return _to ## GetFile(file); } \
-  NS_IMETHOD MTime(char **b, PRUint32 bsize) { return _to ## MTime(b, bsize); } 
+  NS_IMETHOD GetFile(char * *aFile) { return _to ## GetFile(aFile); } \
+  NS_IMETHOD SetFile(const char * aFile) { return _to ## SetFile(aFile); } \
+  NS_IMETHOD MTime(char **_retval) { return _to ## MTime(_retval); } 
 
 #if 0
 /* Use the code below as a template for the implementation class for this interface. */
@@ -79,20 +77,18 @@ nsStat::~nsStat()
   /* destructor code */
 }
 
-/* void setFile (in string file); */
-NS_IMETHODIMP nsStat::SetFile(const char *file)
+/* attribute string file; */
+NS_IMETHODIMP nsStat::GetFile(char * *aFile)
+{
+    return NS_ERROR_NOT_IMPLEMENTED;
+}
+NS_IMETHODIMP nsStat::SetFile(const char * aFile)
 {
     return NS_ERROR_NOT_IMPLEMENTED;
 }
 
-/* void getFile (out string file); */
-NS_IMETHODIMP nsStat::GetFile(char **file)
-{
-    return NS_ERROR_NOT_IMPLEMENTED;
-}
-
-/* void mTime (inout string b, in unsigned long bsize); */
-NS_IMETHODIMP nsStat::MTime(char **b, PRUint32 bsize)
+/* string mTime (); */
+NS_IMETHODIMP nsStat::MTime(char **_retval)
 {
     return NS_ERROR_NOT_IMPLEMENTED;
 }

@@ -22,6 +22,7 @@ class Stat
  private:
   void *mStat;
   char *mFile;
+  char *mBuffer;
   bool mStatCalled;
   void callStat(void);
 
@@ -30,5 +31,5 @@ class Stat
   virtual ~Stat(void);
   void setFile(const char *);
   char *getFile(void);
-  char *mTime(char *, size_t);
+  char *mTime(void);
 };

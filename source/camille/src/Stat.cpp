@@ -59,6 +59,7 @@ Stat::Stat(void)
 {
   mStat = (struct stat *) malloc(sizeof(struct stat));
   mFile = new char[BUFFERSIZE + 1];
+  mBuffer = new char[BUFFERSIZE + 1];
   mStatCalled = 0;
 }
 
@@ -66,6 +67,7 @@ Stat::~Stat(void)
 {
   free(mStat);
   delete mFile;
+  delete mBuffer;
 }
 
 void
@@ -99,7 +101,7 @@ Stat::callStat(void)
 }
 
 char *
-Stat::mTime(char *b, size_t bsize)
+Stat::mTime(void)
 {
   struct tm *tm;
 
@@ -109,7 +111,7 @@ Stat::mTime(char *b, size_t bsize)
    * TODO: localtime_r should be used.
    */
   tm = localtime(&((struct stat *) mStat)->st_mtime);
-  strftime(b, bsize, "%a %b %d %T %Y", tm);
+  strftime(mBuffer, BUFFERSIZE, "%a %b %d %T %Y", tm);
 
-  return b;
+  return mBuffer;
 }
