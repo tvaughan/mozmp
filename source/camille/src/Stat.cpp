@@ -63,13 +63,16 @@
 Stat::Stat(void)
 {
   mStat = (struct stat *) malloc(sizeof(struct stat));
-  mFile = NULL;
+
   mStatCalled = 0;
+
+  mFile = NULL;
 }
 
 Stat::~Stat(void)
 {
   free(mStat);
+
   if (mFile)
     free(mFile);
 }
@@ -80,11 +83,11 @@ Stat::setFile(const char *aFile)
   if (!aFile)
     return;
 
+  mStatCalled = 0;
+
   if (mFile)
     free(mFile);
   mFile = strdup(aFile);
-
-  mStatCalled = 0;
 
   DEBUG((stderr, "setFile \"%s\"\n", mFile));
 }
@@ -103,8 +106,9 @@ Stat::callStat(void)
   if (mStatCalled)
     return;
 
-  stat(mFile, (struct stat *) mStat);
   mStatCalled = 1;
+
+  stat(mFile, (struct stat *) mStat);
 }
 
 char *

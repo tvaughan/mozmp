@@ -26,10 +26,10 @@ class Stat
 {
  private:
   void *mStat;
-  char *mFile;
-  char mTimeStr[CA_MAXBUFFERSIZE];
   bool mStatCalled;
   void callStat(void);
+  char *mFile;
+  char mTimeStr[CA_MAXBUFFERSIZE];
 
  public:
   Stat(void);
