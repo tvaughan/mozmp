@@ -39,7 +39,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 <box flex="1" align="vertical">
 
 	<box>
-	<menubar id="mozmp-menubar">
+	<menubar flex="1" id="mozmp-menubar">
 		<menu accesskey="&file.key;" value="&file.label;">
 			<menupopup>
 				<menuseparator />
