@@ -30,7 +30,7 @@ main(int argc, char **argv)
   char *b;
 
   if (argc != 2) {
-    fprintf(stderr, "Usage: stattest [filename]\n");
+    fprintf(stderr, "Usage: testStat [filename]\n");
     exit(0);
   }
 
