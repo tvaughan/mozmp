@@ -20,12 +20,14 @@
 #ifndef __STAT_H__
 #define __STAT_H__
 
+#define CA_MAXBUFFERSIZE 256
+
 class Stat
 {
  private:
   void *mStat;
   char *mFile;
-  char *mBuffer;
+  char mTimeStr[CA_MAXBUFFERSIZE];
   bool mStatCalled;
   bool mFileSet;
   void callStat(void);
