@@ -21,8 +21,11 @@ test -z "${XPIDL}" && AC_MSG_ERROR(xpidl was not found on this system)
 xpidlbinpath="`dirname ${XPIDL}`"
 xpidlhome="`(cd ${xpidlbinpath}/..; pwd)`"
 xpidlidlpath="${xpidlhome}/idl"
+xpidlincpath="${xpidlhome}/include"
 XPIDLFLAGS="-I${xpidlidlpath}"
+XPIDLCXXFLAGS="-I${xpidlincpath}"
 AC_SUBST(XPIDLFLAGS)
+AC_SUBST(XPIDLCXXFLAGS)
 ])
 
 AC_DEFUN(AC_XPCOM,[

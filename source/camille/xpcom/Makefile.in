@@ -88,6 +88,7 @@ PACKAGE = @PACKAGE@
 RANLIB = @RANLIB@
 VERSION = @VERSION@
 XPIDL = @XPIDL@
+XPIDLCXXFLAGS = @XPIDLCXXFLAGS@
 XPIDLFLAGS = @XPIDLFLAGS@
 
 DISTCLEANFILES = *~
@@ -97,6 +98,8 @@ libnsStat_la_SOURCES = nsStat.cpp nsStat.h nsIStat.h
 EXTRA_DIST = nsIStat.idl nsIStat.xpt
 
 BUILT_SOURCES = nsIStat.h
+
+AM_CXXFLAGS = $(XPIDLCXXFLAGS)
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = ../include/configStat.h
 CONFIG_CLEAN_FILES = 

@@ -23,6 +23,9 @@ EXTRA_DIST = nsIStat.idl nsIStat.xpt
 
 BUILT_SOURCES = nsIStat.h
 
+# In Automake 1.5 this becomes libnsStat_la_CXXFLAGS = ...
+AM_CXXFLAGS = $(XPIDLCXXFLAGS)
+
 %.h: %.idl
 	@$(XPIDL) $(XPIDLFLAGS) -m header $?
 

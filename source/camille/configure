@@ -2033,7 +2033,10 @@ test -z "${XPIDL}" && { echo "configure: error: xpidl was not found on this syst
 xpidlbinpath="`dirname ${XPIDL}`"
 xpidlhome="`(cd ${xpidlbinpath}/..; pwd)`"
 xpidlidlpath="${xpidlhome}/idl"
+xpidlincpath="${xpidlhome}/include"
 XPIDLFLAGS="-I${xpidlidlpath}"
+XPIDLCXXFLAGS="-I${xpidlincpath}"
+
 
 
 
@@ -2199,6 +2202,7 @@ s%@CXX@%$CXX%g
 s%@CPP@%$CPP%g
 s%@XPIDL@%$XPIDL%g
 s%@XPIDLFLAGS@%$XPIDLFLAGS%g
+s%@XPIDLCXXFLAGS@%$XPIDLCXXFLAGS%g
 
 CEOF
 EOF
