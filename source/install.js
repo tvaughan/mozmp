@@ -17,21 +17,24 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-mozmpName		= "mozmp";
-mozmpDisplayName	= "Mozilla Media Player";
-mozmpAuthor		= "mozmp.mozdev.org";
-mozmpVersion		= "0.0.2";
-mozmpRegistryKey	= mozmpAuthor + "/" + mozmpDisplayName;
+pkgName			= "mozmp";
+pkgDisplayName		= "Mozilla Media Player";
+pkgAuthor		= "mozmp.mozdev.org";
+pkgVersion		= "0.0.2";
 
-initInstall(mozmpDisplayName, mozmpRegistryKey, mozmpVersion);
+/* */
 
-var mozmpNameFolder = getFolder("Chrome", mozmpName);
-setPackageFolder(mozmpNameFolder);
+pkgRegistryKey	= pkgAuthor + "/" + pkgDisplayName;
 
-addDirectory(mozmpName);
+initInstall(pkgDisplayName, pkgRegistryKey, pkgVersion);
 
-registerChrome(CONTENT,	getFolder("Chrome", mozmpName + "/content"));
-registerChrome(SKIN,	getFolder("Chrome", mozmpName + "/skin"));
-registerChrome(LOCALE,	getFolder("Chrome", mozmpName + "/locale/en-US"));
+var pkgNameFolder = getFolder("Chrome", pkgName);
+setPackageFolder(pkgNameFolder);
+
+addDirectory(pkgName);
+
+registerChrome(CONTENT,	getFolder("Chrome", pkgName + "/content"));
+registerChrome(SKIN,	getFolder("Chrome", pkgName + "/skin"));
+registerChrome(LOCALE,	getFolder("Chrome", pkgName + "/locale/en-US"));
 
 performInstall();
