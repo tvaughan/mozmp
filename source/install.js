@@ -21,37 +21,25 @@
 pkgName			= "mozmp";
 pkgDisplayName		= "Mozilla Media Player";
 pkgAuthor		= "mozmp.mozdev.org";
-pkgVersion		= "0.1.0";
+pkgVersion		= "nsisound-0.0.1";
+pkgJarFile		= pkgName + ".jar";
 
 /* */
 
-pkgJarFile		= pkgName + ".jar";
-pkgRegistryKey          = pkgAuthor + "/" + pkgDisplayName;
+pkgRegistryKey	= pkgAuthor + "/" + pkgDisplayName;
 
 initInstall(pkgDisplayName, pkgRegistryKey, pkgVersion);
 
-/*
- * TODO: Is this call to addFile correct?
- */
 addFile(pkgDisplayName, pkgJarFile, getFolder("Chrome"), "");
 
 pkgFolder = getFolder("Chrome", pkgJarFile);
 
-/*
- * Only one content here.
- */
 pkgSubDir = pkgName + "/content/";
 registerChrome(CONTENT | DELAYED_CHROME, pkgFolder, pkgSubDir);
 
-/*
- * List all skins here.
- */
 pkgSubDir = pkgName + "/skin/modern/";
 registerChrome(SKIN | DELAYED_CHROME, pkgFolder, pkgSubDir);
 
-/*
- * List all locales here.
- */
 pkgSubDir = pkgName + "/locale/en-US/";
 registerChrome(LOCALE | DELAYED_CHROME, pkgFolder, pkgSubDir);
 
