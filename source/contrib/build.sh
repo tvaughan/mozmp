@@ -18,6 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 ./configure --disable-static --prefix=/tmp/mozmp && make -k install
+make -C camille/xpcom nsIStat.xpt
 cp -f camille/xpcom/*.xpt /tmp/mozmp/lib
 
 ./create-xpi.sh
