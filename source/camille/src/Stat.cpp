@@ -65,7 +65,6 @@ Stat::Stat(void)
   mStat = (struct stat *) malloc(sizeof(struct stat));
   mFile = NULL;
   mStatCalled = 0;
-  mFileSet = 0;
 }
 
 Stat::~Stat(void)
@@ -86,7 +85,6 @@ Stat::setFile(const char *aFile)
   mFile = strdup(aFile);
 
   mStatCalled = 0;
-  mFileSet = 1;
 
   DEBUG((stderr, "setFile \"%s\"\n", mFile));
 }
@@ -114,7 +112,7 @@ Stat::mTime(void)
 {
   struct tm *tm;
 
-  if (!mFileSet)
+  if (!mFile)
     return NULL;
 
   callStat();

@@ -29,7 +29,6 @@ class Stat
   char *mFile;
   char mTimeStr[CA_MAXBUFFERSIZE];
   bool mStatCalled;
-  bool mFileSet;
   void callStat(void);
 
  public:
