@@ -1,5 +1,5 @@
 /*
- * Stat is a portable C++ API to stat(2).
+ * Camille is a portable C++ API to stat(2).
  * Copyright (C) 2000  Tom Vaughan
  *
  * This program is free software; you can redistribute it and/or modify

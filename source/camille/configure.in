@@ -1,4 +1,4 @@
-dnl Stat is a portable C++ API to stat(2).
+dnl Camille is a portable C++ API to stat(2).
 dnl Copyright (C) 2000  Tom Vaughan
 dnl
 dnl This program is free software; you can redistribute it and/or modify
