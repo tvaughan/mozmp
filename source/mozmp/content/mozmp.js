@@ -30,7 +30,7 @@ function mozmpOpen()
 	fp.appendFilters(FILEPICKER_IID.filterAll);
 
 	if (fp.show() == FILEPICKER_IID.returnOK) {
-	    const STAT_CONTRACTID = '@mozilla.org/camille;1';
+	    const STAT_CONTRACTID = '@mozilla.org/Camille;1';
 	    const STAT_IID = Components.interfaces.nsIStat;
 	    stat = Components.classes[STAT_CONTRACTID].createInstance(STAT_IID);
 	    stat.file = fp.file.path;
