@@ -21,19 +21,20 @@
 function mozmpOpen()
 {
     const nsIFilePicker = Components.interfaces.nsIFilePicker;
-    f = "(null)";
+    s = "(null)";
 
     try {
-	fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+	FP = '@mozilla.org/filepicker;1';
+	fp = Components.classes[FP].createInstance(nsIFilePicker);
 	fp.init(window, "Open File...", nsIFilePicker.modeOpen);
 	fp.appendFilters(nsIFilePicker.filterAll);
 
 	if (fp.show() == nsIFilePicker.returnOK) {
-	    f = fp.file.path;
+	    s = fp.file.path;
 	}
 
 	d = document.getElementById('mozmp-display');
-	d.setAttribute("value", f);
+	d.setAttribute("value", s);
     }
     catch(e) {
     }

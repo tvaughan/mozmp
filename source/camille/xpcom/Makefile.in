@@ -381,10 +381,10 @@ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
 # nsIStat.h: nsIStat.idl
 # 	xpidl -m header nsIStat.idl
 # 
-# Use template in nsIStat.h to create nsStat.h and nsStat.cpp.
-# 
 # nsIStat.xpt: nsIStat.idl
 # 	xpidl -m typelib nsIStat.idl
+# 
+# Use template in nsIStat.h to create nsStat.h and nsStat.cpp.
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
