@@ -25,31 +25,17 @@ function mozmpOpen()
 	const FILEPICKER_IID = Components.interfaces.nsIFilePicker;
 	fp = Components.classes[FILEPICKER_CONTRACTID].createInstance(FILEPICKER_IID);
 	fp.init(window, "Open File...", FILEPICKER_IID.modeOpen);
-	fp.appendFilter("Audio Files", "*.wav");
+	fp.appendFilters(FILEPICKER_IID.filterAll);
 
 	if (fp.show() == FILEPICKER_IID.returnOK) {
-	    /*
 	    const STAT_CONTRACTID = '@mozilla.org/Camille;1';
 	    const STAT_IID = Components.interfaces.nsIStat;
 	    stat = Components.classes[STAT_CONTRACTID].createInstance(STAT_IID);
 	    stat.file = fp.file.path;
 	    s = stat.mTime();
-	    */
-
-	    s = fp.file.path;
 
 	    d = document.getElementById('mozmp-display');
 	    d.setAttribute("value", s);
-
-	    const URL_CONTRACTID = "@mozilla.org/network/standard-url;1";
-	    const URL_IID = Components.interfaces.nsIURL;
-	    url = Components.classes[URL_CONTRACTID].createInstance(URL_IID);
-	    url.path = s;
-
-	    const SOUND_CONTRACTID = "@mozilla.org/sound;1";
-	    const SOUND_IID = Components.interfaces.nsISound;
-	    sound = Components.classes[SOUND_CONTRACTID].createInstance(SOUND_IID);
-	    sound.play(url);
 	}
     }
     catch(e) {
