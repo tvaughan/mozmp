@@ -29,4 +29,5 @@ dnl Checks for typedefs, structures, and compiler characteristics.
 
 dnl Checks for library functions.
 
+AC_CONFIG_SUBDIRS(camille)
 AC_OUTPUT([create-xpi.sh Makefile], [chmod a+x create-xpi.sh])
