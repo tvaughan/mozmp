@@ -17,4 +17,4 @@
 
 lib_LTLIBRARIES = libnsStat.la
 libnsStat_la_SOURCES = nsStat.cpp nsStat.h nsIStat.h
-EXTRA_DIST = nsIStat.idl
+EXTRA_DIST = nsIStat.idl nsIStat.xpt
