@@ -17,20 +17,20 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-const name	= "Mozilla Media Player";
-const package	= "mozmp";
-const author	= "Tom Vaughan";
-const version	= "0.0.1";
+mozmpName	= "Mozilla Media Player";
+mozmpPackage	= "mozmp";
+mozmpAuthor	= "Tom Vaughan";
+mozmpVersion	= "0.0.1";
 
-initInstall(name, author + "/" + name, version);
+initInstall(mozmpName, mozmpAuthor + "/" + mozmpName, mozmpVersion);
 
-var packageFolder = getFolder("Chrome", package);
-setPackageFolder(packageFolder);
+var mozmpPackageFolder = getFolder("Chrome", mozmpPackage);
+setPackageFolder(mozmpPackageFolder);
 
-addDirectory(package);
+addDirectory(mozmpPackage);
 
-registerChrome(CONTENT,	getFolder("Chrome", package + "/content"));
-registerChrome(SKIN,	getFolder("Chrome", package + "/skin"));
-registerChrome(LOCALE,	getFolder("Chrome", package + "/locale/en-US"));
+registerChrome(CONTENT,	getFolder("Chrome", mozmpPackage + "/content"));
+registerChrome(SKIN,	getFolder("Chrome", mozmpPackage + "/skin"));
+registerChrome(LOCALE,	getFolder("Chrome", mozmpPackage + "/locale/en-US"));
 
 performInstall();
