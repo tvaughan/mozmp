@@ -9,5 +9,6 @@ stamp-h
 *.jar
 *.la
 *.lo
+*.xpi
 *.xpt
 *~
