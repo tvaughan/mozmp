@@ -17,7 +17,7 @@ dnl Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 dnl Process this file with autoconf to produce a configure script.
 AC_INIT(create-xpi.sh.in)
-AM_INIT_AUTOMAKE(mozmp, 0.0.4)
+AM_INIT_AUTOMAKE(mozmp, 0.1.0)
 
 dnl Checks for programs.
 AC_PROG_ZIP
