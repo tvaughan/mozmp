@@ -17,6 +17,9 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#ifndef __NSSTAT_H__
+#define __NSSTAT_H__
+
 #include "nsIStat.h"
 #include "Stat.h"
 
@@ -32,3 +35,5 @@ class nsStat : public nsIStat
   nsStat();
   virtual ~nsStat();
 };
+
+#endif /* __NSSTAT_H__ */

@@ -17,6 +17,9 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#ifndef __STAT_H__
+#define __STAT_H__
+
 class Stat
 {
  private:
@@ -33,3 +36,5 @@ class Stat
   char *getFile(void);
   char *mTime(void);
 };
+
+#endif /* __STAT_H__ */
