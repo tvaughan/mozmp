@@ -1,0 +1,13 @@
+.deps
+.libs
+Makefile
+config.cache
+config.log
+config.status
+libtool
+stamp-h
+*.jar
+*.la
+*.lo
+*.xpt
+*~
