@@ -31,3 +31,13 @@ function mozmpOnClose()
 {
 	return;
 }
+
+function mozmpExit()
+{
+	close();
+}
+
+function mozmpAbout()
+{
+	alert('Hello World!');
+}

@@ -43,14 +43,14 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	<menu accesskey="&file.key;" value="&file.label;">
 	  <menupopup>
 	    <menuseparator />
-	    <menuitem oncommand="close()"
+	    <menuitem oncommand="mozmpExit()"
 		      accesskey="&exit.key;" value="&exit.label;" />
 	  </menupopup>
 	</menu>
 	<menu accesskey="&help.key;" value="&help.label;">
 	  <menupopup>
 	    <menuseparator />
-	    <menuitem oncommand="alert('Hello World!')"
+	    <menuitem oncommand="mozmpAbout()"
 		      accesskey="&about.key;" value="&about.label;" />
 	  </menupopup>
 	</menu>
