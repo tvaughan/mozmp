@@ -19,6 +19,8 @@
 
 #include "nsIGenericFactory.h"
 
+#include "nsMemory.h"
+
 #include "nsIStat.h"
 #include "nsStat.h"
 
@@ -49,8 +51,13 @@ nsStat::~nsStat()
 /* attribute string file; */
 NS_IMETHODIMP nsStat::GetFile(char * *aFile)
 {
-  *aFile = s->getFile();
-  return NS_OK;
+  char *cp = s->getFile();
+
+  if (!aFile)
+    return NS_ERROR_NULL_POINTER;
+
+  *aFile = (char *) nsMemory::Clone(cp, sizeof(char) * (strlen(cp) + 1));
+  return *aFile ? NS_OK : NS_ERROR_OUT_OF_MEMORY;
 }
 NS_IMETHODIMP nsStat::SetFile(const char * aFile)
 {
@@ -61,6 +68,11 @@ NS_IMETHODIMP nsStat::SetFile(const char * aFile)
 /* string mTime (); */
 NS_IMETHODIMP nsStat::MTime(char **_retval)
 {
-  *_retval = s->mTime();
-  return NS_OK;
+  char *cp = s->mTime();
+
+  if (!_retval)
+    return NS_ERROR_NULL_POINTER;
+
+  *_retval = (char *) nsMemory::Clone(cp, sizeof(char) * (strlen(cp) + 1));
+  return *_retval ? NS_OK : NS_ERROR_OUT_OF_MEMORY;
 }
