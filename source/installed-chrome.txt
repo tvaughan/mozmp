@@ -1,0 +1,3 @@
+locale,install,url,resource:/chrome/mozmp/locale/en-US/
+content,install,url,resource:/chrome/mozmp/content/
+skin,install,url,resource:/chrome/mozmp/skin/
