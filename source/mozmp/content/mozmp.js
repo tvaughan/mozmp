@@ -20,16 +20,16 @@
 
 function mozmpOpen()
 {
-    const nsIFilePicker = Components.interfaces.nsIFilePicker;
     s = "(null)";
 
     try {
-	FP = '@mozilla.org/filepicker;1';
-	fp = Components.classes[FP].createInstance(nsIFilePicker);
-	fp.init(window, "Open File...", nsIFilePicker.modeOpen);
-	fp.appendFilters(nsIFilePicker.filterAll);
+	const FILEPICKER_CONTRACTID = '@mozilla.org/filepicker;1';
+	const FILEPICKER_IID = Components.interfaces.nsIFilePicker;
+	fp = Components.classes[FP].createInstance(FILEPICKER_IID);
+	fp.init(window, "Open File...", FILEPICKER_IID.modeOpen);
+	fp.appendFilters(FILEPICKER_IID.filterAll);
 
-	if (fp.show() == nsIFilePicker.returnOK) {
+	if (fp.show() == FILEPICKER_IID.returnOK) {
 	    const STAT_CONTRACTID = '@mozilla.org/camille;1';
 	    const STAT_IID = Components.interfaces.nsIStat;
 	    stat = Components.classes[STAT_CONTRACTID].createInstance();
