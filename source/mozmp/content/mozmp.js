@@ -49,6 +49,7 @@ function mozmpOpen()
 	d.setAttribute("value", s);
     }
     catch(e) {
+	dump(e);
     }
 }
 
