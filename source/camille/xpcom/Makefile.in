@@ -88,6 +88,8 @@ PACKAGE = @PACKAGE@
 RANLIB = @RANLIB@
 VERSION = @VERSION@
 
+DISTCLEANFILES = *~
+
 lib_LTLIBRARIES = libnsStat.la
 libnsStat_la_SOURCES = nsStat.cpp nsStat.h nsIStat.h
 EXTRA_DIST = nsIStat.idl nsIStat.xpt
@@ -334,6 +336,7 @@ clean-generic:
 distclean-generic:
 	-rm -f Makefile $(CONFIG_CLEAN_FILES)
 	-rm -f config.cache config.log stamp-h stamp-h[0-9]*
+	-test -z "$(DISTCLEANFILES)" || rm -f $(DISTCLEANFILES)
 
 maintainer-clean-generic:
 mostlyclean-am:  mostlyclean-libLTLIBRARIES mostlyclean-compile \

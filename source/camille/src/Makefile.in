@@ -88,6 +88,8 @@ PACKAGE = @PACKAGE@
 RANLIB = @RANLIB@
 VERSION = @VERSION@
 
+DISTCLEANFILES = *~
+
 lib_LTLIBRARIES = libStat.la
 libStat_la_SOURCES = Stat.cpp
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
@@ -328,6 +330,7 @@ clean-generic:
 distclean-generic:
 	-rm -f Makefile $(CONFIG_CLEAN_FILES)
 	-rm -f config.cache config.log stamp-h stamp-h[0-9]*
+	-test -z "$(DISTCLEANFILES)" || rm -f $(DISTCLEANFILES)
 
 maintainer-clean-generic:
 mostlyclean-am:  mostlyclean-libLTLIBRARIES mostlyclean-compile \
