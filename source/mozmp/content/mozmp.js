@@ -38,11 +38,17 @@ function mozmpOpen()
 	    s = stat.mTime();
 	    */
 
+	    const URL_CONTRACTID = "@mozilla.org/network/standard-url;1";
+	    const URL_IID = Components.interfaces.nsIURL;
+	    url = Components.classes[URL_CONTRACTID].createInstance(URL_IID);
+	    url.path = fp.file.path;
+
 	    const SOUND_CONTRACTID = "@mozilla.org/sound;1";
 	    const SOUND_IID = Components.interfaces.nsISound;
 	    sound = Components.classes[SOUND_CONTRACTID].createInstance(SOUND_IID);
-	    s = fp.file.URL;
-	    sound.play(s);
+	    sound.play(url);
+
+	    s = url.path;
 	}
 
 	d = document.getElementById('mozmp-display');
