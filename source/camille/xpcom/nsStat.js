@@ -48,7 +48,7 @@ nsStat.prototype = {
     },
 
     mTime: function() {
-	return this.mTime();
+	return this.MTime;
     },
 
     QueryInterface: function(iid) {
