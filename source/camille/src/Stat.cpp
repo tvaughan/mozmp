@@ -55,6 +55,12 @@
 
 #define BUFFERSIZE 256
 
+#if 0
+#define DEBUG(x)	fprintf x
+#else
+#define DEBUG(x)
+#endif /* 0 */
+
 Stat::Stat(void)
 {
   mStat = (struct stat *) malloc(sizeof(struct stat));
@@ -82,12 +88,16 @@ Stat::setFile(const char *file)
   sprintf(mFile, file);
 #endif /* HAVE_SNPRINTF */
 
+  DEBUG((stderr, "setFile \"%s\"\n", mFile));
+
   mStatCalled = 0;
 }
 
 char *
 Stat::getFile(void)
 {
+  DEBUG((stderr, "getFile \"%s\"\n", mFile));
+
   return mFile;
 }
 
@@ -112,6 +122,8 @@ Stat::mTime(void)
    */
   tm = localtime(&((struct stat *) mStat)->st_mtime);
   strftime(mBuffer, BUFFERSIZE, "%a %b %d %T %Y", tm);
+
+  DEBUG((stderr, "mTime \"%s\"\n", mBuffer));
 
   return mBuffer;
 }
