@@ -27,6 +27,7 @@ class Stat
   char *mFile;
   char *mBuffer;
   bool mStatCalled;
+  bool mFileSet;
   void callStat(void);
 
  public:

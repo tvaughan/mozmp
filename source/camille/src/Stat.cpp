@@ -67,6 +67,7 @@ Stat::Stat(void)
   mFile = new char[BUFFERSIZE + 1];
   mBuffer = new char[BUFFERSIZE + 1];
   mStatCalled = 0;
+  mFileSet = 0;
 }
 
 Stat::~Stat(void)
@@ -89,6 +90,7 @@ Stat::setFile(const char *file)
 #endif /* HAVE_SNPRINTF */
 
   mStatCalled = 0;
+  mFileSet = 1;
 
   DEBUG((stderr, "setFile \"%s\"\n", mFile));
 }
@@ -115,6 +117,9 @@ char *
 Stat::mTime(void)
 {
   struct tm *tm;
+
+  if (!mFileSet)
+    return NULL;
 
   callStat();
 
