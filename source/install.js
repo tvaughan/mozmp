@@ -21,7 +21,7 @@
 pkgName			= "mozmp";
 pkgDisplayName		= "Mozilla Media Player";
 pkgAuthor		= "mozmp.mozdev.org";
-pkgVersion		= "0.0.2";
+pkgVersion		= "0.0.3";
 
 /* */
 

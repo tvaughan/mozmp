@@ -29,6 +29,6 @@ function mozmpInstall()
 {
 	var xpi = new Object();
 
-	xpi["Mozilla Media Player"] = "ftp://ftp.mozdev.org/pub/mozmp/mozmp-0.0.2.xpi";
+	xpi["Mozilla Media Player"] = "ftp://ftp.mozdev.org/pub/mozmp/mozmp-0.0.3.xpi";
 	InstallTrigger.install(xpi, mozmpInstallCallback);
 }
