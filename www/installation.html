@@ -1,30 +1,37 @@
 <script language="javascript" src="install.js"></script>
 
 <!-- MAIN CONTENT -->
-<P><B>Installation</B><BR>
+<h2>Installation</h2>
 
-      <p align="left">
-	<b>WARNING</b><br>
-	Sound support in mozilla is still a work in progress. At this time,
-	mozmp does not work with recent mozilla builds, including M18, 0.7 and
-	0.8.
-      </p>
+  <p align="left">
+    <h3>WARNING!</h3>
+    Sound support in mozilla is still a work in progress. At this time,
+    mozmp does not work with recent mozilla builds, including M18, 0.7 and
+    0.8. This release <i>should</i> be upwards compatible with whatever
+    mozilla release sound support works again in.
+  </p>
 
-      <p align="left">
-	Download and install (as root) mozmp by clicking on the button
-	below. Once the installation has completed, mozilla must be restarted.
-      </p>
+  <p align="left">
+    <h3>Step 1</h3>
+    Download and install mozmp by clicking on the button below. On UNIX,
+    this must be done as root.
+    <p align="left">
+      <form action="#">
+	<input type="button" value="Install MozMP"
+	       onClick="mozmpInstall();" onCommand="mozmpInstall();">
+      </form>
+    </p>
+  </p>
 
-      <p align="left">
-	To start mozmp, run:
-	<br>
-	<br>
+  <p align="left">
+    <h3>Step 2</h3>
+    Exit and then re-start mozilla. This will register mozmp with mozilla.
+  </p>
+
+  <p align="left">
+    <h3>Step 3</h3>
+    Start mozmp. Type:
+    <br>
+    <br>
 	<tt>mozilla -chrome chrome://mozmp/content/</tt>
-      </p>
-
-      <p align="center">
-	<form action="#">
-	  <input type="button" value="Install MozMP"
-		 onClick="mozmpInstall();" onCommand="mozmpInstall();">
-	</form>
-      </p>
+  </p>
