@@ -18,10 +18,9 @@
  */
 
 #include "nsIGenericFactory.h"
+
 #include "nsIStat.h"
 #include "nsStat.h"
-
-NS_IMPL_ISUPPORTS1(nsStat, nsIStat)
 
 NS_GENERIC_FACTORY_CONSTRUCTOR(nsStat)
 
@@ -32,6 +31,8 @@ components[] = {
 };
 
 NS_IMPL_NSGETMODULE("nsStat", components)
+
+NS_IMPL_ISUPPORTS1(nsStat, nsIStat)
 
 nsStat::nsStat()
 {
