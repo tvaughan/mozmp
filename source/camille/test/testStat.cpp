@@ -21,8 +21,6 @@
 
 #include "Stat.h"
 
-#define BUFFERSIZE 256
-
 int
 main(int argc, char **argv)
 {
