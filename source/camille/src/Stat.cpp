@@ -79,6 +79,8 @@ Stat::setFile(const char *file)
 #else
   sprintf(mFile, file);
 #endif /* HAVE_SNPRINTF */
+
+  mStatCalled = 0;
 }
 
 char *
