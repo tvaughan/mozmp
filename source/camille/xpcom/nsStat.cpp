@@ -17,10 +17,23 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include "nsIGenericFactory.h"
 #include "nsIStat.h"
 #include "nsStat.h"
 
 NS_IMPL_ISUPPORTS1(nsStat, nsIStat)
+
+#define NS_STAT_CONTRACTID "@mozilla.org/camille;1"
+
+NS_GENERIC_FACTORY_CONSTRUCTOR(nsStat)
+
+static nsModuleComponentInfo
+components[] = {
+  { "Camille Component", NS_ISTAT_IID, NS_STAT_CONTRACTID,
+    nsStatConstructor, NULL, NULL }
+};
+
+NS_IMPL_NSGETMODULE("nsStat", components)
 
 nsStat::nsStat()
 {

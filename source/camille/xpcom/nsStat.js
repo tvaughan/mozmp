@@ -70,7 +70,7 @@ nsStat.prototype = {
 var nsStatModule = {
     registerSelf: function(compMgr, fileSpec, location, type) {
 	compMgr.registerComponentWithType(STAT_CID, 
-					  "nsStat component",
+					  "Camille component",
 					  STAT_CONTRACTID,
 					  fileSpec,
 					  location,
