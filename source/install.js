@@ -20,7 +20,7 @@
 mozmpName	= "Mozilla Media Player";
 mozmpPackage	= "mozmp";
 mozmpAuthor	= "Tom Vaughan";
-mozmpVersion	= "0.0.1";
+mozmpVersion	= "0.0.2";
 
 initInstall(mozmpName, mozmpAuthor + "/" + mozmpName, mozmpVersion);
 
