@@ -22,6 +22,7 @@ pkgName			= "mozmp";
 pkgDisplayName		= "Mozilla Media Player";
 pkgAuthor		= "mozmp.mozdev.org";
 pkgVersion		= "0.0.3";
+pkgJarFile		= pkgName + ".jar";
 
 /* */
 
@@ -29,19 +30,17 @@ pkgRegistryKey	= pkgAuthor + "/" + pkgDisplayName;
 
 initInstall(pkgDisplayName, pkgRegistryKey, pkgVersion);
 
-var pkgNameFolder = getFolder("Chrome", pkgName);
-setPackageFolder(pkgNameFolder);
+addFile(pkgDisplayName, pkgJarFile, getFolder("Chrome"), "");
 
-addDirectory(pkgName);
+pkgFolder = getFolder("Chrome", pkgJarFile);
 
-pkgSubDir = pkgName + "/content";
-pkgFolder = getFolder("Chrome", pkgSubDir);
+pkgSubDir = pkgName + "/content/";
 registerChrome(CONTENT | DELAYED_CHROME, pkgFolder, pkgSubDir);
-pkgSubDir = pkgName + "/skin/modern";
-pkgFolder = getFolder("Chrome", pkgSubDir);
+
+pkgSubDir = pkgName + "/skin/modern/";
 registerChrome(SKIN | DELAYED_CHROME, pkgFolder, pkgSubDir);
-pkgSubDir = pkgName + "/locale/en-US";
-pkgFolder = getFolder("Chrome", pkgSubDir);
+
+pkgSubDir = pkgName + "/locale/en-US/";
 registerChrome(LOCALE | DELAYED_CHROME, pkgFolder, pkgSubDir);
 
 performInstall();

@@ -1,0 +1,7 @@
+#! /bin/sh
+
+PACKAGE=@PACKAGE@
+VERSION=@VERSION@
+
+jar cf ${PACKAGE}.jar `find ${PACKAGE} -type f | grep -v CVS`
+zip -r ${PACKAGE}-${VERSION}.xpi -i@MANIFEST .
