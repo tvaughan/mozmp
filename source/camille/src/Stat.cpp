@@ -36,11 +36,6 @@
 #include <sys/time.h>
 #endif /* TM_IN_SYS_TIME */
 
-#ifdef HAVE_UNISTD_H
-#include <sys/types.h>
-#include <unistd.h>
-#endif /* HAVE_UNISTD_H */
-
 #ifdef HAVE_SYS_STAT_H
 #include <sys/stat.h>
 #endif /* HAVE_SYS_STAT_H */

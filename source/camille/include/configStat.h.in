@@ -1,8 +1,5 @@
 /* include/configStat.h.in.  Generated automatically from configure.in by autoheader.  */
 
-/* Define to `unsigned' if <sys/types.h> doesn't define.  */
-#undef size_t
-
 /* Define if you have the ANSI C header files.  */
 #undef STDC_HEADERS
 
@@ -20,9 +17,6 @@
 
 /* Define if you have the <sys/time.h> header file.  */
 #undef HAVE_SYS_TIME_H
-
-/* Define if you have the <unistd.h> header file.  */
-#undef HAVE_UNISTD_H
 
 /* Name of package */
 #undef PACKAGE
