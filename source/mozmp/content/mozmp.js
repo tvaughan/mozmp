@@ -25,7 +25,7 @@ function mozmpOpen()
 	const FILEPICKER_IID = Components.interfaces.nsIFilePicker;
 	fp = Components.classes[FILEPICKER_CONTRACTID].createInstance(FILEPICKER_IID);
 	fp.init(window, "Open File...", FILEPICKER_IID.modeOpen);
-	fp.appendFilters(FILEPICKER_IID.filterAll);
+	fp.appendFilter("Audio Files", "*.wav");
 
 	if (fp.show() == FILEPICKER_IID.returnOK) {
 	    /*
