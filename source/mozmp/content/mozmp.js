@@ -32,9 +32,8 @@ function mozmpOpen()
 	if (fp.show() == FILEPICKER_IID.returnOK) {
 	    const STAT_CONTRACTID = '@mozilla.org/camille;1';
 	    const STAT_IID = Components.interfaces.nsIStat;
-	    stat = Components.classes[STAT_CONTRACTID].createInstance();
-	    stat = stat.QueryInterface(STAT_IID);
-	    stat.setFile(fp.file.path);
+	    stat = Components.classes[STAT_CONTRACTID].createInstance(STAT_IID);
+	    stat.file = fp.file.path;
 	    s = stat.mTime();
 	}
 
