@@ -44,6 +44,10 @@
 #include <stdlib.h>
 #endif /* STDC_HEADERS */
 
+#ifdef HAVE_STRING_H
+#include <string.h>
+#endif /* HAVE_STRING_H */
+
 #include <stdio.h>
 
 #include "Stat.h"
@@ -59,7 +63,7 @@
 Stat::Stat(void)
 {
   mStat = (struct stat *) malloc(sizeof(struct stat));
-  mFile = new char[BUFFERSIZE + 1];
+  mFile = NULL;
   mBuffer = new char[BUFFERSIZE + 1];
   mStatCalled = 0;
   mFileSet = 0;
@@ -68,21 +72,20 @@ Stat::Stat(void)
 Stat::~Stat(void)
 {
   free(mStat);
-  delete mFile;
+  if (mFile)
+    free(mFile);
   delete mBuffer;
 }
 
 void
-Stat::setFile(const char *file)
+Stat::setFile(const char *aFile)
 {
-  if (!file)
+  if (!aFile)
     return;
 
-#ifdef HAVE_SNPRINTF
-  snprintf(mFile, BUFFERSIZE, file);
-#else
-  sprintf(mFile, file);
-#endif /* HAVE_SNPRINTF */
+  if (mFile)
+    free(mFile);
+  mFile = strdup(aFile);
 
   mStatCalled = 0;
   mFileSet = 1;
