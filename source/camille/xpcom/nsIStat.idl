@@ -19,13 +19,13 @@
 
 #include "nsISupports.idl"
 
-%{C++
-
-#define NS_ISTAT_CONTRACTID "@mozilla.org/Camille;1"
-%}
-
 [scriptable, uuid(6df20f63-68a0-4c51-a847-a3ba00b6e6b6)]
 interface nsIStat : nsISupports {
   attribute string file;
   string mTime();
 };
+
+%{C++
+#define NS_ISTAT_CLASSNAME    "Camille Component"
+#define NS_ISTAT_CONTRACTID   "@mozilla.org/Camille;1"
+%}

@@ -28,7 +28,7 @@ NS_GENERIC_FACTORY_CONSTRUCTOR(nsStat)
 
 static nsModuleComponentInfo
 components[] = {
-  { "Camille Component", NS_ISTAT_IID, NS_ISTAT_CONTRACTID,
+  { NS_ISTAT_CLASSNAME, NS_ISTAT_IID, NS_ISTAT_CONTRACTID,
     nsStatConstructor, NULL, NULL }
 };
 
