@@ -6,6 +6,7 @@
 
 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         title="lizzard"
+				style="min-width: 200px; min-height: 200px;"
         orient="vertical">
 
 <box flex="1" class="foo" />
