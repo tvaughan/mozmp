@@ -18,6 +18,23 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+function mozmpOpen()
+{
+    const nsIFilePicker = Components.interfaces.nsIFilePicker;
+
+    try {
+	fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+	fp.init(window, "Open File...", nsIFilePicker.modeOpen);
+	fp.appendFilters(nsIFilePicker.filterAll);
+
+	if (fp.show() == nsIFilePicker.returnOK) {
+	    alert("File: " + fp.file.path);
+	}
+    }
+    catch(e) {
+    }
+}
+
 function mozmpExit()
 {
     close();
