@@ -18,7 +18,7 @@
 CLEANFILES = *.xpt $(BUILT_SOURCES)
 DISTCLEANFILES = *~
 
-SUFFIXES = .idl .xpt
+SUFFIXES = .html .idl .xpt
 
 lib_LTLIBRARIES = libnsStat.la
 libnsStat_la_SOURCES = nsStat.cpp nsStat.h nsIStat.h
@@ -32,6 +32,9 @@ AM_CXXFLAGS = $(XPIDLCXXFLAGS)
 
 %.h: %.idl
 	@$(XPIDL) $(XPIDLFLAGS) -m header $?
+
+%.html: %.idl
+	@$(XPIDL) $(XPIDLFLAGS) -m doc $?
 
 %.xpt: %.idl
 	@$(XPIDL) $(XPIDLFLAGS) -m typelib $?
