@@ -21,7 +21,13 @@ test -z "${XPIDL}" && AC_MSG_ERROR(xpidl was not found on this system)
 xpidlbinpath="`dirname ${XPIDL}`"
 xpidlhome="`(cd ${xpidlbinpath}/..; pwd)`"
 xpidlidlpath="${xpidlhome}/idl"
+if test ! -f "${xpidlidlpath}/nsISupports.idl"; then
+	xpidlidlpath="/usr/share/mozilla/idl"
+fi
 xpidlincpath="${xpidlhome}/include"
+if test ! -f "${xpidlincpath}/nsISupports.h"; then
+	xpidlincpath="/usr/include/mozilla"
+fi
 XPIDLFLAGS="-I${xpidlidlpath}"
 XPIDLCXXFLAGS="-I${xpidlincpath}"
 AC_SUBST(XPIDLFLAGS)
