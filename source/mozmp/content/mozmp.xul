@@ -62,8 +62,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     </box>
 
     <box>
-      <statusbar flex="1">
-	<statusbarpanel value="Time Remaining: " />
+      <statusbar flex="1" id="status-bar" class="chromeclass-status">
+	<statusbarpanel id="statusbar-display" value="Time Remaining: " />
       </statusbar>
     </box>
 
