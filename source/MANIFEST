@@ -4,5 +4,5 @@ mozmp/content/mozmp.js
 mozmp/content/mozmp.xul
 mozmp/locale/en-US/contents.rdf
 mozmp/locale/en-US/mozmp.dtd
-mozmp/skin/contents.rdf
-mozmp/skin/mozmp.css
+mozmp/skin/modern/contents.rdf
+mozmp/skin/modern/mozmp.css

@@ -33,8 +33,11 @@ setPackageFolder(pkgNameFolder);
 
 addDirectory(pkgName);
 
-registerChrome(CONTENT,	getFolder("Chrome", pkgName + "/content"));
-registerChrome(SKIN,	getFolder("Chrome", pkgName + "/skin"));
-registerChrome(LOCALE,	getFolder("Chrome", pkgName + "/locale/en-US"));
+pkgFolder = getFolder("Chrome", pkgName + "/content");
+registerChrome(CONTENT | DELAYED_CHROME, pkgFolder);
+pkgFolder = getFolder("Chrome", pkgName + "/skin/modern");
+registerChrome(SKIN | DELAYED_CHROME, pkgFolder);
+pkgFolder = getFolder("Chrome", pkgName + "/locale/en-US");
+registerChrome(LOCALE | DELAYED_CHROME, pkgFolder);
 
 performInstall();
