@@ -94,6 +94,8 @@ XPIDLFLAGS = @XPIDLFLAGS@
 CLEANFILES = *.xpt
 DISTCLEANFILES = *~
 
+SUFFIXES = .idl .xpt
+
 lib_LTLIBRARIES = libnsStat.la
 libnsStat_la_SOURCES = nsStat.cpp nsStat.h nsIStat.h
 EXTRA_DIST = nsIStat.idl nsStat.js
@@ -138,7 +140,7 @@ OBJECTS = $(libnsStat_la_OBJECTS)
 
 all: all-redirect
 .SUFFIXES:
-.SUFFIXES: .S .c .cpp .lo .o .s
+.SUFFIXES: .S .c .cpp .idl .lo .o .s .xpt
 $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
 	cd $(top_srcdir) && $(AUTOMAKE) --foreign xpcom/Makefile
 
