@@ -22,18 +22,18 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -->
 
 <RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:chrome="http://www.mozilla.org/rdf/chrome#">
+	 xmlns:chrome="http://www.mozilla.org/rdf/chrome#">
 
-	<RDF:Seq about="urn:mozilla:package:root">
-		<RDF:li resource="urn:mozilla:package:mozmp"/>
-	</RDF:Seq>
+  <RDF:Seq about="urn:mozilla:package:root">
+    <RDF:li resource="urn:mozilla:package:mozmp"/>
+  </RDF:Seq>
 
-	<RDF:Description
-		about="urn:mozilla:package:mozmp"
-		chrome:displayName="Mozilla Media Player"
-		chrome:author="Tom Vaughan"
-		chrome:name="mozmp">
-	</RDF:Description>
+  <RDF:Description
+		   about="urn:mozilla:package:mozmp"
+		   chrome:name="mozmp"
+		   chrome:displayName="Mozilla Media Player"
+		   chrome:author="Tom Vaughan">
+  </RDF:Description>
 
 </RDF:RDF>
 

@@ -34,40 +34,40 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-<script type="text/javascript" src="chrome://mozmp/content/mozmp.js" />
+  <script type="text/javascript" src="chrome://mozmp/content/mozmp.js" />
 
-<box flex="1" orient="vertical">
+  <box flex="1" orient="vertical">
 
-	<box>
-	<menubar flex="1" id="mozmp-menubar">
-		<menu accesskey="&file.key;" value="&file.label;">
-			<menupopup>
-				<menuseparator />
-				<menuitem oncommand="close()"
-					accesskey="&exit.key;" value="&exit.label;" />
-			</menupopup>
-		</menu>
-		<menu accesskey="&help.key;" value="&help.label;">
-			<menupopup>
-				<menuseparator />
-				<menuitem oncommand="alert('Hello World!')"
-					accesskey="&about.key;" value="&about.label;" />
-			</menupopup>
-		</menu>
-	</menubar>
-	</box>
+    <box>
+      <menubar flex="1" id="mozmp-menubar">
+	<menu accesskey="&file.key;" value="&file.label;">
+	  <menupopup>
+	    <menuseparator />
+	    <menuitem oncommand="close()"
+		      accesskey="&exit.key;" value="&exit.label;" />
+	  </menupopup>
+	</menu>
+	<menu accesskey="&help.key;" value="&help.label;">
+	  <menupopup>
+	    <menuseparator />
+	    <menuitem oncommand="alert('Hello World!')"
+		      accesskey="&about.key;" value="&about.label;" />
+	  </menupopup>
+	</menu>
+      </menubar>
+    </box>
 
-	<box flex="1">
-	<iframe flex="1" id="mozmp-display" src="about:blank" />
-	</box>
+    <box flex="1">
+      <iframe flex="1" id="mozmp-display" src="about:blank" />
+    </box>
 
-	<box>
-	<statusbar flex="1">
-		<statusbarpanel value="Time Remaining: " />
-	</statusbar>
-	</box>
+    <box>
+      <statusbar flex="1">
+	<statusbarpanel value="Time Remaining: " />
+      </statusbar>
+    </box>
 
-</box>
+  </box>
 
 </window>
 

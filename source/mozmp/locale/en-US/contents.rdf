@@ -22,19 +22,19 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -->
 
 <RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:chrome="http://www.mozilla.org/rdf/chrome#">
+	 xmlns:chrome="http://www.mozilla.org/rdf/chrome#">
 
-	<RDF:Seq about="urn:mozilla:locale:root">
-		<RDF:li resource="urn:mozilla:locale:en-US"/>
-	</RDF:Seq>
+  <RDF:Seq about="urn:mozilla:locale:root">
+    <RDF:li resource="urn:mozilla:locale:en-US"/>
+  </RDF:Seq>
 
-	<RDF:Description
-		about="urn:mozilla:locale:en-US"
-		chrome:displayName="English(US)"
-		chrome:author="Tom Vaughan"
-		chrome:name="en-US"
-		chrome:previewURL="http://www.mozilla.org/locales/en-US.gif">
-	</RDF:Description>
+  <RDF:Description
+		   about="urn:mozilla:locale:en-US"
+		   chrome:name="en-US"
+		   chrome:displayName="English(US)"
+		   chrome:author="Tom Vaughan"
+		   chrome:previewURL="http://www.mozilla.org/locales/en-US.gif">
+  </RDF:Description>
 
 </RDF:RDF>
 
