@@ -28,7 +28,7 @@ main(int argc, char **argv)
 
   if (argc != 2) {
     fprintf(stderr, "Usage: testStat [filename]\n");
-    exit(0);
+    return 0;
   }
 
   s = new Stat();
@@ -39,5 +39,5 @@ main(int argc, char **argv)
 
   delete s;
 
-  exit(0);
+  return 0;
 }

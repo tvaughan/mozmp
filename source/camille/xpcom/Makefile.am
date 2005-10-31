@@ -20,15 +20,17 @@ DISTCLEANFILES = *~
 
 SUFFIXES = .html .idl .xpt
 
-lib_LTLIBRARIES = libnsStat.la
-libnsStat_la_SOURCES = nsStat.cpp nsStat.h nsIStat.h
-libnsStat_la_LIBADD = ../src/Stat.lo
 EXTRA_DIST = nsIStat.idl
 
 BUILT_SOURCES = nsIStat.h
 
-# In Automake 1.5 this becomes libnsStat_la_CXXFLAGS = ...
-AM_CXXFLAGS = $(XPIDLCXXFLAGS)
+lib_LTLIBRARIES = libnsStat.la
+libnsStat_la_SOURCES = nsStat.cpp nsStat.h nsIStat.h
+libnsStat_la_CXXFLAGS = $(XPCOMCFLAGS) -I/usr/include/mozilla-firefox
+libnsStat_la_LDFLAGS = $(XPCOMLDFLAGS)
+libnsStat_la_LIBADD = ../src/Stat.lo
+
+XPIDLFLAGS = -I/usr/share/idl/mozilla-firefox
 
 %.h: %.idl
 	@$(XPIDL) $(XPIDLFLAGS) -m header $?
